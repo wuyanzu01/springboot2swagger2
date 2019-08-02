@@ -20,14 +20,30 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig extends WebMvcConfigurationSupport {
 
+    /**
+     * 设置一个开关，生产版本为false，关闭swagger
+     */
     @Value("${swagger.ebable}")
     private boolean ebable;
 
     @Bean
     public Docket createRestApi(){
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).
-                enable(ebable).select().apis(RequestHandlerSelectors.basePackage("com.demo.controller")). //检查包
+                enable(ebable).select().apis(RequestHandlerSelectors.basePackage("com.demo.controller")). //扫描包
                 paths(PathSelectors.any()).build();
+        //可以设置为扫描多个包
+        /**
+         * com.google.common.base.Predicate<RequestHandler> selector1 = RequestHandlerSelectors.basePackage("设置你要扫描的包路径");
+         * com.google.common.base.Predicate<RequestHandler> selector2 = RequestHandlerSelectors.basePackage("设置你要扫描的包路径");
+         * createRestApi这样写即可。
+         * @Bean
+         *     public Docket createRestApi(){
+         *         return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).
+         *         enable(ebable).select().
+         *         apis(Predicates.or(selector1,selector2)).
+         *         paths(PathSelectors.any()).build();
+         *     }
+         */
     }
 
 
