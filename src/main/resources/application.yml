@@ -13,5 +13,5 @@ mybatis:
   configuration:
     lazy-loading-enabled: true
     aggressive-lazy-loading: false
-swagger:
+swagger: ##给swagger设置一个开关
   ebable: true
