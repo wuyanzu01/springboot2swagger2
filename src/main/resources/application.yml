@@ -1,0 +1,17 @@
+server:
+  tomcat:
+    uri-encoding: utf-8
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&useSSL=false&serverTimezone=CTT
+    username: root
+    password:
+mybatis:
+  mapper-locations: classpath*:com/demo/mapper/*.xml
+  type-aliases-package: com.demo.entity
+  configuration:
+    lazy-loading-enabled: true
+    aggressive-lazy-loading: false
+swagger:
+  ebable: true
