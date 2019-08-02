@@ -6,6 +6,6 @@
 
 #user.sql文件是数据库文件，里面有建库建表文件，建好之后把代码clone到idea上就可以直接在本地上运行了
 
-#运行成功后，直接访问http://localhost:8080/swagger-ui.html就能看到生成的接口文档了。
+#运行成功后，直接访问http://localhost:8080/swagger-ui.html 就能看到生成的接口文档了。
 
 #请关注微信公众号：请快点喜欢我。
